@@ -1,0 +1,60 @@
+package javaapplication1;
+import java.util.*;
+
+
+public class Task1 {
+    public static void main(String[] args) {
+        
+        Scanner input= new Scanner(System.in); //creating object for input
+       
+        int count=0; // varibale for checking 
+        
+        
+        // analyzing first name
+        System.out.println("Enter first name = ");
+        
+        String name1=input.nextLine(); // getting string input
+        
+        char Arr1[]=name1.toCharArray();
+       
+        
+        //analyzing second name 
+        System.out.println("Enter first name = ");
+     
+        String name2=input.nextLine();
+        
+        char[] Arr2=name2.toCharArray();
+        
+       
+        if(Arr1.length!=Arr2.length){ // if names have different numbers of charachter's 
+         
+            System.out.println("Above names are not permutation's of each other !");
+        }
+        else{ //now if number  of charcter's are same then lets check their permutation
+ 
+             // checking if any charcter of first name is matching with any charcter of second name
+            for(char i: Arr1){
+            
+                for(char j: Arr2){
+              
+                    
+                    if(i==j){
+                        count++;
+                        break; // not more then once, charcter could be counted 
+                    }
+                }
+            }
+        
+            if(count==Arr1.length) // if number of matching charcters are same in name one or name two then both are permutation of each other.
+            System.out.println("yes above names are permutations of each other");
+            
+            else //  // if number of matching charcters are not same in name one or name two then they are not permutaions of each other.
+            System.out.println("Above names are not permutation's of each other !");
+       
+        }
+        
+        
+        
+    }
+    
+}
